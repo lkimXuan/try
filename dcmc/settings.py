@@ -150,6 +150,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#配置redis
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
 
 import os
 path = os.path.split(os.path.realpath(__file__))[0]
@@ -225,6 +235,18 @@ LOGGING = {
             'when': 'D',
             'interval': 1,
             'delay': True,
+        },
+        'sms':{
+            'level': 'INFO',
+            'filters': ['api'],
+            'formatter': 'api',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': log_path + 'sms.log',
+            'encoding': 'utf-8',
+            'backupCount': 100,
+            'when': 'D',
+            'interval': 1,
+            'delay': True,
         }
     },
     'loggers': {
@@ -246,6 +268,11 @@ LOGGING = {
         },
         'ad': {
             'handlers': ['ad'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'sms': {
+            'handlers': ['sms'],
             'level': 'INFO',
             'propagate': False,
         },

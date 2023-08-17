@@ -10,7 +10,7 @@ from ldap3 import *
 from configfile import config
 
 logger_ad = logging.getLogger('ad')
-global user_admin
+
 try:
     ad_host = config.getConfig('ADInfo', 'ad_host')['configfile']
     ad_port = config.getConfig('ADInfo', 'ad_port')['configfile']
