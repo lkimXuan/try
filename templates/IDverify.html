@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IDcerify</title>
+    <style type="text/css">
+        /*解决css not fond
+        清除元素的默认设置，为之后自定义的css样式设计不产生偏差*/
+        .body{
+            margin:0;
+            padding:0;
+        }
+        
+        
+        .container{
+            /*让div大小和屏幕的宽高一样大小*/
+            position:absolute; 
+            left:0; top:0; 
+            width:100%;
+            height:100%; 
+            /*设置背景图片*/
+            /* background-image: url(back.jpg); */
+        
+        }
+        .main{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+        .IDverify{
+            margin-bottom: 60px;
+            text-align: center;
+            color:black;
+            /* font-family:"STCaiyun"; */
+            font-size: 68px;
+            /*设置发光效果*/
+            /* text-shadow: 0 0 10px rgb(221, 76, 124),0 0 20px rgb(221, 76, 124),0 0 30px rgb(221, 76, 124),0 0 40px  rgb(221, 76, 124); */
+        }
+        
+        .content{
+            height:320px;
+            width:450px;
+            border-radius: 10px;
+            box-shadow: 5px 5px  azure;/*阴影设置*/
+            background-color: rgba(253, 206, 237, 0.34);/*设置颜色，,0.34为透明度，这样不影响子级div的透明度*/
+            padding: 10px;
+            /*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+            display: table-cell;
+            /*垂直居中 */
+            vertical-align: middle;
+            /*水平居中*/
+            text-align: center;
+        
+        }
+        
+        /*input框设置*/
+        input{
+            color:rgb(251, 194, 202);/*input-value值内容的颜色设置*/
+            
+            font-size: 15px;/*input字体大小设置值*/
+            outline:none;/*鼠标点击input框，不显示边框颜色*/
+        }
+        /*鼠标触碰用户名框，边框颜色改变*/
+        
+        .name{
+            height: 40px;
+            width:280px;
+            border-radius: 8px;/*设置边框圆角*/
+            border-color: white;/*边框颜色*/
+            margin-top: 5px;
+            
+        }
+        
+        .phone{
+            height: 40px;
+            width:280px;
+            border-radius: 8px;/*设置边框圆角*/
+            margin-top: 20px;/*设置元素的上外边距。*/
+            border-color: white;/*边框颜色*/
+        }
+
+        .code{
+            height: 40px;
+            width:180px;
+            border-radius: 8px;/*设置边框圆角*/
+            margin-top: 20px;/*设置元素的上外边距。*/
+            margin-bottom: 25px;/*设置元素的下外边距。*/
+            border-color: white;/*边框颜色*/
+        }
+        .notice{
+            height: 40px;
+            width:280px;
+            border-radius: 8px;/*设置边框圆角*/
+            border: 10px solid rgba(255,255,255,0);/*设置边框透明*/
+            background-color:rgba(255,255,255,0);/*设置文本框透明*/
+        }
+
+        .button{
+            height: 40px;
+            width: 50px;
+            font-size: 12px;
+            font-family:"YouYuan";
+            border-radius: 8px;/*设置边框圆角*/
+            background-color:rgba(253, 183, 207, 0.91);/*框背景颜色*/
+            border-color: rgba(243, 47, 116, 0);;/*边框颜色*/ 
+        }
+
+        /*鼠标触碰登录，边框颜色改变*/
+        .button:hover{
+            border-color:lavender;/*边框颜色*/
+        }
+        .button{
+            height: 40px;
+            width: 130px;
+            font-size: 17px;
+            font-family:"YouYuan";
+            border-radius: 8px;/*设置边框圆角*/
+            background-color:rgba(247, 77, 136, 0.91);/*框背景颜色*/
+            border-color: rgba(243, 47, 116, 0);;/*边框颜色*/ 
+        }
+    </style> 
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+    var countdown=60;
+    function settime(obj) {
+       if (countdown == 0) {
+           obj.removeAttribute("disabled");
+           obj.value="获取验证码";
+           countdown = 60;
+           return;
+       } else {
+           obj.setAttribute("disabled", true);
+           obj.value=countdown + "s后重新发送" ;
+           countdown--;
+       }
+    setTimeout(function() {
+       settime(obj) }
+       ,1000)
+    }
+</script>
+<body>
+        <div class="container">
+            <div class="main">
+                <h1 class="IDverify">手机号验证</h1>
+                <div class="content">
+                    <input type="text" id="name" class="name" placeholder="请输入用户名">{{name}}<br>
+                    <input type="text" id="phone" class="phone" placeholder="请输入手机号"> <br>
+                    <!-- <input id="validateCodeButton" @click="sendValidateCode()" type="button" style="font-size: 12px" value="获取验证码"><br> -->
+                    <input type="text" id="code" class="code" placeholder="请输入验证码">
+                    <input type="button" id="codebutton" class="codebutton" onclick="settime(this)" value="获取验证码"><br>
+                    <!-- <input type="text" class="notice" placeholder="这是提示信息"><br> -->
+                    <input type="button" id="submit" class="button" value="确定"><br>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+<script>
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue =   decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+
+</script>
+
+<script>
+    $("#codebutton").click(function () {
+        // var user = $("#name").val()
+        // var mobile = $("#phone").val()
+        $.ajax({
+            type:"POST",
+            url:"",
+            data:{
+                user :$("#name").val(),
+               mobile:$("#phone").val()
+            },
+            // async:true,
+            // success:function (data) {
+            //     alert(data)
+            // }
+            success:function (args) {
+                alert(args)
+            }
+        })
+    })
+ </script>
+
+<script>
+    $("#submit").click(function () {
+        // var user = $("#name").val()
+        // var mobile = $("#phone").val()
+        $.ajax({
+            type:"POST",
+            url:"",
+            data:{
+                user :$("#name").val(),
+               mobile:$("#phone").val(),
+               code:$("#code").val()
+            },
+            // async:true,
+            // success:function (data) {
+            //     alert(data)
+            // }
+            success:function (args) {
+                alert(args)
+            }
+        })
+    })
+ </script>
+ 
+</html>
