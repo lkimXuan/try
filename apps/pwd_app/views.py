@@ -104,7 +104,6 @@ class SendMSG(APIView):
         # 获取redis对象连接
         try:
             redis_conn = get_redis_connection('default')
-            print(redis_conn)
         except Exception as e:
             log_info = {
                 'info': 'redis连接失败',
@@ -159,7 +158,8 @@ class VerifyCode(APIView):
         # 获取redis对象连接
         redis_conn = get_redis_connection('default')
         phone = '19102070531'
-        verify_code = request.data['verify_code']
+        # verify_code = request.data['verify_code']
+        verify_code = ''
         redis_code = redis_conn.get('sms_code_%s' % phone)
         # 判断redis_code 是否有效：
         if redis_code:

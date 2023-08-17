@@ -105,3 +105,83 @@ TypeError: Object of type bytes is not JSON serializable
 2023-08-17 14:57:29,901 - None - None - None - INFO     - Watching for file changes with StatReloader
 2023-08-17 15:00:23,548 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/apps/pwd_app/views.py changed, reloading.
 2023-08-17 15:00:24,038 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:01:38,991 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:01:50,332 - /api/pwd_manage/verify_code/ - 127.0.0.1 - None - ERROR    - Internal Server Error: /api/pwd_manage/verify_code/
+Traceback (most recent call last):
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/wangzhexian/project/dcmc/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangzhexian/project/dcmc/apps/pwd_app/views.py", line 162, in post
+    verify_code = request.data['verify_code']
+KeyError: 'verify_code'
+2023-08-17 15:02:06,922 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/apps/pwd_app/views.py changed, reloading.
+2023-08-17 15:02:07,611 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:02:21,222 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/apps/pwd_app/views.py changed, reloading.
+2023-08-17 15:02:21,803 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:02:26,019 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:02:26,019 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:02:26,020 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:02:26,021 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:02:26,021 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:06:46,228 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:06:46,904 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:06:54,937 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:06:54,937 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:06:54,938 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:06:54,938 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:06:54,938 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:07:45,480 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:07:46,075 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:08:17,798 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:08:17,798 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:08:17,799 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:08:17,799 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:08:17,800 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:09:33,592 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:09:34,048 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:09:41,459 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:09:41,460 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:09:41,460 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:09:41,460 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:09:41,460 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:10:03,010 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:10:03,485 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:10:32,415 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/apps/pwd_app/views.py changed, reloading.
+2023-08-17 15:10:32,946 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:10:42,159 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:10:42,159 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:10:42,160 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:10:42,160 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:10:42,160 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:19:54,299 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:19:54,300 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:19:54,300 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:19:54,300 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:19:54,300 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:22:17,486 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:22:17,486 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:22:17,486 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:22:17,486 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:22:17,486 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:27:40,220 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:27:40,913 - None - None - None - INFO     - Watching for file changes with StatReloader
+2023-08-17 15:27:46,004 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - override steps (5) and chunk_size (512) as content does not fit (1 byte(s) given) parameters.
+2023-08-17 15:27:46,004 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - WARNING  - Trying to detect encoding from a tiny portion of (1) byte(s).
+2023-08-17 15:27:46,005 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2023-08-17 15:27:46,005 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii should target any language(s) of ['Latin Based']
+2023-08-17 15:27:46,005 - /api/pwd_manage/send_msg/ - 127.0.0.1 - None - INFO     - ascii is most likely the one. Stopping the process.
+2023-08-17 15:28:21,146 - None - None - None - INFO     - /Users/wangzhexian/project/dcmc/msg_utils/send_msg.py changed, reloading.
+2023-08-17 15:28:21,622 - None - None - None - INFO     - Watching for file changes with StatReloader

@@ -30,10 +30,11 @@ def send_msg(phone,sms_code,subid=None, msgtype=1):
         payload = {
             'username':username,
             'password':password,
-            'text':'密码修改验证码：'.format(sms_code), #验证码
+            'text':'修改密码页验证码为：{0}'.format(sms_code).encode('GBK'), #验证码
             'to':phone,
             'subid':subid,
             'msgtype':msgtype,
+            'batch_name':None,
             'Version':1.0,
         }
         res = requests.get(sms_url,params=payload,headers=headers)
